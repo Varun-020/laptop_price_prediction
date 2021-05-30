@@ -1,0 +1,181 @@
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Laptop Price Prediction</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <!-- Latest compiled and minified CSS -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style>
+    .row{
+        padding: 20px;
+    }
+    .btn{
+        padding: 15px;
+        color: red;
+        background-color: green;
+        margin-bottom: 40px;
+    }
+    body{
+        background-color: chocolate;
+    }
+	h1{
+	font-family: 'Times New Roman', Times, serif; 
+	color: aliceblue;
+  font-size: 40px;
+	color: green;
+	}
+  .card text-center{
+    background-color: black;
+    color: chartreuse;
+  }
+</style>
+</head>
+<body> 
+    <center>
+        <h1><u>Laptop Price Prediction</u><hr color="green"></h1>
+            <form action="{{ url_for('make_prediction')}}"method="post">
+              <div class="row">
+                <div class="col">
+                  <h5 style="color:white; font-size: larger; font-family: Arial, Helvetica, sans-serif;">Enter the screen size: </h5>
+                </div>
+                <div class="col">
+                  <input type="text" name="f1" placeholder="screen size(in inches)"
+                style="background-color: black; 
+                color: chartreuse; width: 500px; height: 30px;">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <h5 style="color:white; font-size: larger; font-family: Arial, Helvetica, sans-serif;">Enter the Screen Resolution:</h5>
+                </div>
+                <div class="col">
+                  <input type="text" name="f2" placeholder="Screen Resolution"
+                style="background-color: black; 
+                color: chartreuse; width: 500px; height: 30px;">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <h5 style="color:white; font-size: larger; font-family: Arial, Helvetica, sans-serif;">Enter the RAM:</h5>
+                </div>
+                <div class="col">
+                  <input type="text" name="f3" placeholder="RAM"
+                style="background-color: black; 
+                color: chartreuse; width: 500px; height: 30px;">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <h5 style="color:white; font-size: larger; font-family: Arial, Helvetica, sans-serif;">Enter the Memory:</h5>
+                </div>
+                <div class="col">
+                  <input type="text" name="f4" placeholder="Memory"
+                style="background-color: black; 
+                color: chartreuse; width: 500px; height: 30px;">
+                </div>
+              </div><br>
+              <div class="row">
+                <div class="col">
+                  <h5 style="color:white; font-size: larger; font-family: Arial, Helvetica, sans-serif;">Enter the Weight:</h5>
+                </div>
+                <div class="col">
+                  <input type="text" name="f5" placeholder="Weight(in kg)"
+                style="background-color: black; 
+                color: chartreuse; width: 500px; height: 30px;">
+                </div>
+              </div><br>
+              <div class="row">
+                <div class="col">
+                  <h5 style="color:white; font-size: larger; font-family: Arial, Helvetica, sans-serif;">Enter the HDD:</h5>
+                </div>
+                <div class="col">
+                  <input type="text" name="f6" placeholder="HDD"
+                style="background-color: black; 
+                color: chartreuse; width: 500px; height: 30px;">
+                </div>
+              </div><br>
+              <div class="row">
+                <div class="col">
+                  <h5 style="color:white; font-size: larger; font-family: Arial, Helvetica, sans-serif;">Enter the SSD:</h5>
+                </div>
+                <div class="col">
+                  <input type="text" name="f7" placeholder="SSD"
+                style="background-color: black; 
+                color: chartreuse; width: 500px; height: 30px;">
+                </div>
+              </div><br>
+              <div class="row">
+                <div class="col">
+                  <h5 style="color:white; font-size: larger; font-family: Arial, Helvetica, sans-serif;">Hybrid :>
+                </div>
+                <div class="col">
+                  <input type="text" name="f8" placeholder="Hybrid (0 for no and 1 for yes)"
+                style="background-color: black; 
+                color: chartreuse; width: 500px; height: 30px;">
+                </div>
+              </div><br>
+              <div class="row">
+                <div class="col">
+                  <h5 style="color:white; font-size: larger; font-family: Arial, Helvetica, sans-serif;">Enter the Flash_Storage:</h5>
+                </div>
+                <div class="col">
+                  <input type="text" name="f9" placeholder="Flash_Storage"
+                style="background-color: black; 
+                color: chartreuse; width: 500px; height: 30px;">
+                </div>
+              </div><br>
+              <div class="row">
+                <div class="col">
+                  <h5 style="color:white; font-size: larger; font-family: Arial, Helvetica, sans-serif;">Enter the X-Res:</h5>
+                </div>
+                <div class="col">
+                  <input type="text" name="f10" placeholder="X-Res"
+                style="background-color: black; 
+                color: chartreuse; width: 500px; height: 30px;">
+                </div>
+              </div><br>
+              <div class="row">
+                <div class="col">
+                  <h5 style="color:white; font-size: larger; font-family: Arial, Helvetica, sans-serif;">Enter the Y-Res:</h5>
+                </div>
+                <div class="col">
+                  <input type="text" name="f11" placeholder="Y-Res"
+                style="background-color: black; 
+                color: chartreuse; width: 500px; height: 30px;">
+                </div>
+              </div><br>
+              <div class="row">
+                <div class="col">
+                  <h5 style="color:white; font-size: larger; font-family: Arial, Helvetica, sans-serif;">Enter the PPI:</h5>
+                </div>
+                <div class="col">
+                  <input type="text" name="f12" placeholder="PPI(pixel per inch)"
+                style="background-color: black; 
+                color: chartreuse; width: 500px; height: 30px;">
+                </div>
+              </div><br>
+                <input type="submit" class="btn" value="predict">
+                </form>
+    </center>
+    <div class="card text-center" style="width:21.5em;margin:0 auto;">
+        <div class="card-body">
+          <p class="card text">
+          <h1>{{prediction}}</h1>
+          </p>
+        </div>
+        </div>
+</body>
+</html>
